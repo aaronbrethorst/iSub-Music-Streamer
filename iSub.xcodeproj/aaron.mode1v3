@@ -266,13 +266,13 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>22</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AudioStreamer.m</string>
+								<string>AlbumViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,25 +323,26 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AudioStreamer.m</string>
+										<string>AlbumViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>93C6D673121CFDDF0014A4FB</string>
+										<string>93C6D6C6121D106D0014A4FB</string>
 										<key>history</key>
 										<array>
 											<string>93F30F0C1211D5C400B6FF0D</string>
 											<string>93F30F0D1211D5C400B6FF0D</string>
 											<string>93F30F0E1211D5C400B6FF0D</string>
 											<string>93F30F0F1211D5C400B6FF0D</string>
-											<string>93F30F101211D5C400B6FF0D</string>
-											<string>93F30F111211D5C400B6FF0D</string>
-											<string>93F30F121211D5C400B6FF0D</string>
-											<string>93F30F131211D5C400B6FF0D</string>
-											<string>93F30F141211D5C400B6FF0D</string>
-											<string>93F30F151211D5C400B6FF0D</string>
 											<string>93F30F161211D5C400B6FF0D</string>
-											<string>930F77D6121CD26A00D9F7F5</string>
+											<string>93C6D6A8121D060D0014A4FB</string>
+											<string>93C6D6A9121D060D0014A4FB</string>
+											<string>93C6D6AA121D060D0014A4FB</string>
+											<string>93C6D6AB121D060D0014A4FB</string>
+											<string>93C6D6AC121D060D0014A4FB</string>
+											<string>93C6D6AD121D060D0014A4FB</string>
+											<string>93C6D6C4121D106D0014A4FB</string>
+											<string>93C6D6C5121D106D0014A4FB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -539,6 +540,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>93C6D6B4121D06B60014A4FB</string>
+		<string>93C6D6B2121D060D0014A4FB</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>93F309F212109A9900B6FF0D</string>
@@ -777,14 +781,12 @@
 							<key>Dock</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>iSubAppDelegate.m</string>
+										<string></string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -805,6 +807,8 @@
 							<string>542pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -840,8 +844,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>93F30A2412109E1F00B6FF0D</string>
-				<string>93F30A2512109E1F00B6FF0D</string>
+				<string>93C6D686121CFE840014A4FB</string>
+				<string>93C6D687121CFE840014A4FB</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>

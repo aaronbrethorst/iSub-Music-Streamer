@@ -32,7 +32,6 @@
 #import "iSubAppDelegate.h"
 #import "iPhoneStreamingPlayerViewController.h"
 #import "AlbumUITableViewCell.h"
-#import "SongUITableViewCell.h"
 #import "AsynchronousImageViewCached.h"
 #import "XMLParser.h"
 #import "Artist.h"
