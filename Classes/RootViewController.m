@@ -44,13 +44,13 @@
     [super viewDidLoad];
 	appDelegate = (iSubAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	self.title = @"Index";
+	self.title = NSLocalizedString(@"Artists",@"");
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(settingsAction:)] autorelease];
 			
 	if (appDelegate.listOfArtists == nil)
 	{
 		appDelegate.parseState = @"artists";
-		//NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:[appDelegate getBaseUrl:@"getIndexes.view"]]];
+		
 		NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:[appDelegate getBaseUrl:@"getIndexes.view"]]];
 		
 		//Initialize the delegate.
@@ -250,21 +250,20 @@
 }
 
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	static NSString *CellIdentifier = @"Cell";
 	
-	UITableViewCell *cell = [[[UITableViewCell alloc] init] autorelease];
-	cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if (cell == nil)
+	{
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
 	// Set up the cell...
 	if(searching)
 	{
-		[cell.textLabel setText:[copyListOfArtists objectAtIndex:indexPath.row]];
+		cell.textLabel.text = [copyListOfArtists objectAtIndex:indexPath.row];
 	}
 	else
 	{
@@ -275,9 +274,9 @@
 		[cell.textLabel setText:cellValue];
 	}
 	
-	cell.backgroundView = [[[UIView alloc] init] autorelease];
-	cell.backgroundView.backgroundColor = [UIColor whiteColor];
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//	cell.backgroundView = [[[UIView alloc] init] autorelease];
+//	cell.backgroundView.backgroundColor = [UIColor whiteColor];
+//	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	return cell;
 }
