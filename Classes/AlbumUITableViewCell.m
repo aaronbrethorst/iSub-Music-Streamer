@@ -47,7 +47,7 @@
 		[self.coverArtView release];
 		
 		self.albumNameLabel = [[UILabel alloc] init];
-		self.albumNameLabel.textAlignment = UITextAlignmentLeft; // default
+		self.albumNameLabel.highlightedTextColor = [UIColor whiteColor];
 		self.albumNameLabel.font = [UIFont boldSystemFontOfSize:20];
 		[myContentView addSubview:self.albumNameLabel];
 		[self.albumNameLabel release];

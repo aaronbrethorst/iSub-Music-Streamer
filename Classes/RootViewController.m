@@ -138,7 +138,6 @@
 	[appDelegate.window addSubview:[settingsViewController view]];
 	[appDelegate.window makeKeyAndVisible];
 	[self.view removeFromSuperview];
-	//[settingsViewController release];
 }
 
 
@@ -153,10 +152,8 @@
 	}
 }
 
-
 #pragma mark -
-#pragma mark Tableview methods
-
+#pragma mark UISearchBar
 
 - (void) searchBarTextDidBeginEditing:(UISearchBar *)theSearchBar 
 {
@@ -222,6 +219,8 @@
 	searchArray = nil;
 }
 
+#pragma mark -
+#pragma mark UITableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
@@ -274,10 +273,6 @@
 		[cell.textLabel setText:cellValue];
 	}
 	
-//	cell.backgroundView = [[[UIView alloc] init] autorelease];
-//	cell.backgroundView.backgroundColor = [UIColor whiteColor];
-//	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	
 	return cell;
 }
 
@@ -320,7 +315,7 @@
 }
 
 
-- (NSIndexPath *)tableView :(UITableView *)theTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+- (NSIndexPath *)tableView:(UITableView *)theTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath 
 {
 	if(letUserSelectRow)
 		return indexPath;
