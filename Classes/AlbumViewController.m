@@ -187,18 +187,17 @@
 	else
 	{
 		static NSString *SongCellIdentifier = @"SongCellIdentifier";
-		
-		SongUITableViewCell *cell = (SongUITableViewCell*)[tv dequeueReusableCellWithIdentifier:SongCellIdentifier];
+		UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:SongCellIdentifier];
 		
 		if (nil == cell)
 		{
-			cell = [[[SongUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SongCellIdentifier] autorelease];
-			cell.accessoryType = UITableViewCellAccessoryNone;
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SongCellIdentifier] autorelease];
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		}
 		
 		NSUInteger a = indexPath.row - [appDelegate.listOfAlbums count];
 		NSString *cellValue = [appDelegate.listOfSongs objectAtIndex:a];
-		cell.songNameLabel.text = cellValue;
+		cell.textLabel.text = cellValue;
 				
 		return cell;
 	}
