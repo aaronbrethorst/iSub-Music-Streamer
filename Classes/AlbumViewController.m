@@ -145,18 +145,22 @@
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+- (UITableViewCell *)tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)indexPath 
 {	
-	static NSString *CellIdentifier = @"Cell";
-	
-	// Set up the cell...
 	if (indexPath.row < [appDelegate.listOfAlbums count])
 	{
-		AlbumUITableViewCell *cell = [[[AlbumUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		//if (cell == nil) {
-		//	cell = [[AlbumUITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier];
-		//}
+		static NSString *AlbumCellIdentifier = @"AlbumCellIdentifier";
+		AlbumUITableViewCell *cell = (AlbumUITableViewCell*)[tv dequeueReusableCellWithIdentifier:AlbumCellIdentifier];
+		
+		if (nil == cell)
+		{
+			cell = [[[AlbumUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AlbumCellIdentifier] autorelease];
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		}
+		
 		NSString *cellValue = [appDelegate.listOfAlbums objectAtIndex:indexPath.row];
+		
+		cell.albumNameLabel.text = cellValue;
 		
 		if ([[appDelegate.dictOfAlbums objectForKey:cellValue] coverArtId])
 		{
@@ -178,23 +182,24 @@
 			cell.coverArtView.image = [UIImage imageNamed:@"default-album-art-small.png"];
 		}
 		
-		[cell.albumNameLabel setText:cellValue];
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-		
 		return cell;
 	}
 	else
 	{
-		SongUITableViewCell *cell = [[[SongUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		//if (cell == nil) {
-		//	cell = [[SongUITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier];
-		//}
+		static NSString *SongCellIdentifier = @"SongCellIdentifier";
+		
+		SongUITableViewCell *cell = (SongUITableViewCell*)[tv dequeueReusableCellWithIdentifier:SongCellIdentifier];
+		
+		if (nil == cell)
+		{
+			cell = [[[SongUITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SongCellIdentifier] autorelease];
+			cell.accessoryType = UITableViewCellAccessoryNone;
+		}
 		
 		NSUInteger a = indexPath.row - [appDelegate.listOfAlbums count];
 		NSString *cellValue = [appDelegate.listOfSongs objectAtIndex:a];
-		[cell.songNameLabel setText:cellValue];
-		cell.accessoryType = UITableViewCellAccessoryNone;
-		
+		cell.songNameLabel.text = cellValue;
+				
 		return cell;
 	}
 }
